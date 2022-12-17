@@ -39,8 +39,8 @@ const getMyUser = (req, res) => {
 }
 
 const postUser = (req, res) => {
-    const {firstName, lastName, email, password, gender, birthday} = req.body
-    userControllers.createUser({firstName, lastName, email, password,gender, birthday})
+    const {firstName, lastName, email, password, phone, gender, birthday} = req.body
+    userControllers.createUser({firstName, lastName, email, password, phone, gender, birthday})
         .then((data) => {
             res.status(201).json(data)
         })
@@ -50,6 +50,7 @@ const postUser = (req, res) => {
                 lastName: 'String',
                 email: 'example@example.com',
                 password: 'String',
+                phone: 'string',
                 gender: 'String',
                 birthday: 'YYYY/MM/DD'
             }})

@@ -6,7 +6,7 @@ const Users = db.define('users' ,{
     id: {
         type: DataTypes.UUID,
         primaryKey: true
-    },
+    }, 
     firstName: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -33,6 +33,14 @@ const Users = db.define('users' ,{
         type: DataTypes.STRING,
         allowNull: false,
     },
+    profile_image: {
+        type: DataTypes.STRING   
+    },
+    phone: {
+        type: DataTypes.STRING,
+        allowNull: false, 
+        unique: false
+    },
     gender: {
         type: DataTypes.STRING,
     },
@@ -53,5 +61,5 @@ const Users = db.define('users' ,{
         defaultValue: false
     }
 })
-
+ 
 module.exports = Users
